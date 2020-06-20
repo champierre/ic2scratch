@@ -11,44 +11,44 @@ const blockIconURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYA
 
 const Message = {
   when_received_block: {
-    'ja': '認識結果を受け取ったとき',
-    'ja-Hira': 'にんしきけっかをうけとったとき',
-    'en': 'when received classification results',
+    'ja': '認識の候補を受け取ったとき',
+    'ja-Hira': 'にんしきのこうほをうけとったとき',
+    'en': 'when received classification candidates',
     'zh-cn': '收到分类结果时'
   },
   result1: {
-    'ja': '認識結果1',
-    'ja-Hira': 'にんしきけっか1',
-    'en': 'result1',
+    'ja': '候補1',
+    'ja-Hira': 'こうほ1',
+    'en': 'candidate1',
     'zh-cn': '结果1'
   },
   result2: {
-    'ja': '認識結果2',
-    'ja-Hira': 'にんしきけっか2',
-    'en': 'result2',
+    'ja': '候補2',
+    'ja-Hira': 'こうほ2',
+    'en': 'candidate2',
     'zh-cn': '结果2'
   },
   result3: {
-    'ja': '認識結果3',
-    'ja-Hira': 'にんしきけっか3',
-    'en': 'result3',
+    'ja': '候補3',
+    'ja-Hira': 'こうほ3',
+    'en': 'candidate3',
     'zh-cn': '结果3'
   },
   confidence1: {
-    'ja': '精度1',
-    'ja-Hira': 'せいど1',
+    'ja': '確信度1',
+    'ja-Hira': 'かくしんど1',
     'en': 'confidence1',
     'zh-cn': '置信度1'
   },
   confidence2: {
-    'ja': '精度2',
-    'ja-Hira': 'せいど2',
+    'ja': '確信度2',
+    'ja-Hira': 'かくしんど2',
     'en': 'confidence2',
     'zh-cn': '置信度2'
   },
   confidence3: {
-    'ja': '精度3',
-    'ja-Hira': 'せいど3',
+    'ja': '確信度3',
+    'ja-Hira': 'かくしんど3',
     'en': 'confidence3',
     'zh-cn': '置信度3'
   },
