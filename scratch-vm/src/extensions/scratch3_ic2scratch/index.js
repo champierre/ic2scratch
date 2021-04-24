@@ -99,33 +99,21 @@ class Scratch3ImageClassifierBlocks {
     this.results = [];
     this.locale = this.setLocale();
 
-    this.video = document.createElement("video");
-    this.video.width = 480;
-    this.video.height = 360;
-    this.video.autoplay = true;
-    this.video.style.display = "none";
-
     this.blockClickedAt = null;
 
     this.interval = 1000;
 
-    let media = navigator.mediaDevices.getUserMedia({
-      video: true,
-      audio: false
-    });
+    this.detect = () => {
+      this.video = this.runtime.ioDevices.video.provider.video;
+      this.classifier = ml5.imageClassifier('MobileNet', () => {
+        console.log('Model Loaded!');
+        this.timer = setInterval(() => {
+          this.classify();
+        }, this.interval);
+      });
+    }
 
-    media.then((stream) => {
-      this.video.srcObject = stream;
-    });
-
-    this.classifier = ml5.imageClassifier('MobileNet', () => {
-      console.log('Model Loaded!');
-      this.timer = setInterval(() => {
-        this.classify();
-      }, this.interval);
-    });
-
-    this.runtime.ioDevices.video.enableVideo();
+    this.runtime.ioDevices.video.enableVideo().then(this.detect)
   }
 
   getInfo() {
@@ -284,7 +272,7 @@ class Scratch3ImageClassifierBlocks {
     if (state === 'off') {
       this.runtime.ioDevices.video.disableVideo();
     } else {
-      this.runtime.ioDevices.video.enableVideo();
+      this.runtime.ioDevices.video.enableVideo().then(this.detect);
       this.runtime.ioDevices.video.mirror = state === "on";
     }
   }
